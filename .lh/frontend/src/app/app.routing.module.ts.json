@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 19,
+            "activePatchIndex": 20,
             "patches": [
                 {
                     "date": 1724932671457,
@@ -84,6 +84,10 @@
                 {
                     "date": 1724933114774,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,17 +8,16 @@\n     path: 'error',\n     loadChildren: () =>\n       import('./modules/error/error.module').then((m) => m.ErrorModule),\n   },\n-  { path: 'layout', loadChildren: () => import('./modules/layout/layout.module').then(m => m.LayoutModule) },\n   {\n     path: '**',\n     redirectTo: 'error',\n     pathMatch: 'full',\n   },\n ];\n \n @NgModule({\n-  imports: [RouterModule.forRoot(routes), LayoutModule],\n+  imports: [RouterModule.forRoot(routes)],\n   exports: [RouterModule],\n })\n export default class AppRouting {}\n"
+                },
+                {
+                    "date": 1724937759851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,24 +1,22 @@\n import { NgModule } from '@angular/core';\n import { Routes, RouterModule } from '@angular/router';\n-import { LayoutModule } from './modules/layout/layout.module';\n \n const routes: Routes = [\n   {},\n   {\n     path: 'error',\n     loadChildren: () =>\n       import('./modules/error/error.module').then((m) => m.ErrorModule),\n   },\n-  { path: 'layout', loadChildren: () => import('./modules/layout/layout.module').then(m => m.LayoutModule) },\n   {\n     path: '**',\n     redirectTo: 'error',\n     pathMatch: 'full',\n   },\n ];\n \n @NgModule({\n-  imports: [RouterModule.forRoot(routes), LayoutModule],\n+  imports: [RouterModule.forRoot(routes)],\n   exports: [RouterModule],\n })\n export default class AppRouting {}\n"
                 }
             ],
             "date": 1724932671457,
