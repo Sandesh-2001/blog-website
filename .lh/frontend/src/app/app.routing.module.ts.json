@@ -1,0 +1,94 @@
+{
+    "sourceFile": "frontend/src/app/app.routing.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 19,
+            "patches": [
+                {
+                    "date": 1724932671457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1724932679953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n+import { NgModule } from \"@angular/core\";\n import {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724932685456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n import { NgModule } from \"@angular/core\";\n-import {}\n\\ No newline at end of file\n+import {Route, RouterModule}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724932702721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,4 @@\n-import { NgModule } from \"@angular/core\";\n-import {Route, RouterModule}\n\\ No newline at end of file\n+import { NgModule } from '@angular/core';\n+import { Route, RouterModule } from '@angular/router';\n+\n+const routes : Route = [];\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724932708941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n import { NgModule } from '@angular/core';\n-import { Route, RouterModule } from '@angular/router';\n+import { Routes, RouterModule } from '@angular/router';\n \n\\ No newline at end of file\n-const routes : Route = [];\n+const routes : Route = [];\n+\n"
+                },
+                {
+                    "date": 1724932716501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,8 @@\n import { NgModule } from '@angular/core';\n import { Routes, RouterModule } from '@angular/router';\n \n-const routes : Route = [];\n+const routes : Routes = [];\n+\n+@NgModule({\n+    \n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724932724047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n \n const routes : Routes = [];\n \n @NgModule({\n-    \n+    imports:[rou]\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724932730438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n \n const routes : Routes = [];\n \n @NgModule({\n-    imports:[rou]\n+    imports:[RouterModule.forRoot(routes)]\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724932738843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,9 @@\n \n const routes : Routes = [];\n \n @NgModule({\n-    imports:[RouterModule.forRoot(routes)]\n-})\n\\ No newline at end of file\n+    imports:[RouterModule.forRoot(routes)],\n+    \n+})\n+\n+export de\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724932745764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,7 @@\n     imports:[RouterModule.forRoot(routes)],\n     \n })\n \n-export de\n\\ No newline at end of file\n+export default AppRouting(){\n+    \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724932753256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n const routes : Routes = [];\n \n @NgModule({\n     imports:[RouterModule.forRoot(routes)],\n-    \n+    exports:[rou]\n })\n \n export default AppRouting(){\n-    \n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724932758455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n const routes : Routes = [];\n \n @NgModule({\n     imports:[RouterModule.forRoot(routes)],\n-    exports:[rou]\n+    exports:[RouterModule]\n })\n \n-export default AppRouting(){\n+export default AppRouting{\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724932788999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,10 @@\n import { NgModule } from '@angular/core';\n import { Routes, RouterModule } from '@angular/router';\n \n-const routes : Routes = [];\n+const routes: Routes = [{ path: 'error', loadChildren: () => import('./modules/error/error.module').then(m => m.ErrorModule) }];\n \n @NgModule({\n-    imports:[RouterModule.forRoot(routes)],\n-    exports:[RouterModule]\n+  imports: [RouterModule.forRoot(routes)],\n+  exports: [RouterModule],\n })\n-\n\\ No newline at end of file\n-export default AppRouting{\n-\n-}\n+export default class AppRouting {}\n"
+                },
+                {
+                    "date": 1724932796987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,17 @@\n import { NgModule } from '@angular/core';\n import { Routes, RouterModule } from '@angular/router';\n \n-const routes: Routes = [{ path: 'error', loadChildren: () => import('./modules/error/error.module').then(m => m.ErrorModule) }];\n+const routes: Routes = [\n+    {\n+        \n+    }\n+  {\n+    path: 'error',\n+    loadChildren: () =>\n+      import('./modules/error/error.module').then((m) => m.ErrorModule),\n+  },\n+];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n   exports: [RouterModule],\n"
+                },
+                {
+                    "date": 1724932821989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n import { Routes, RouterModule } from '@angular/router';\n \n const routes: Routes = [\n     {\n-        \n-    }\n+\n+    },\n   {\n     path: 'error',\n     loadChildren: () =>\n       import('./modules/error/error.module').then((m) => m.ErrorModule),\n"
+                },
+                {
+                    "date": 1724932827931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,11 @@\n     path: 'error',\n     loadChildren: () =>\n       import('./modules/error/error.module').then((m) => m.ErrorModule),\n   },\n+  {\n+    path:\"**\"\n+  }\n ];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n"
+                },
+                {
+                    "date": 1724932834815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n     loadChildren: () =>\n       import('./modules/error/error.module').then((m) => m.ErrorModule),\n   },\n   {\n-    path:\"**\"\n+    path:\"**\",\n+    pathMatch:'error'\n   }\n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1724932840546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       import('./modules/error/error.module').then((m) => m.ErrorModule),\n   },\n   {\n     path:\"**\",\n-    pathMatch:'error'\n+    pathMatch:\n   }\n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1724932849704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,10 @@\n       import('./modules/error/error.module').then((m) => m.ErrorModule),\n   },\n   {\n     path:\"**\",\n-    pathMatch:\n+    redirectTo:'error',\n+    pathMatch:'full'\n   }\n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1724933114774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,17 +8,16 @@\n     path: 'error',\n     loadChildren: () =>\n       import('./modules/error/error.module').then((m) => m.ErrorModule),\n   },\n-  { path: 'layout', loadChildren: () => import('./modules/layout/layout.module').then(m => m.LayoutModule) },\n   {\n     path: '**',\n     redirectTo: 'error',\n     pathMatch: 'full',\n   },\n ];\n \n @NgModule({\n-  imports: [RouterModule.forRoot(routes), LayoutModule],\n+  imports: [RouterModule.forRoot(routes)],\n   exports: [RouterModule],\n })\n export default class AppRouting {}\n"
+                }
+            ],
+            "date": 1724932671457,
+            "name": "Commit-0",
+            "content": "import {}"
+        }
+    ]
+}
