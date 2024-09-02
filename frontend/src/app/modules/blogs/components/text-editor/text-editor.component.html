@@ -118,6 +118,7 @@
         <label for="comment" class="sr-only">Comment</label>
         <div>
           <textarea
+            (input)="onChangeValue($event)"
             rows="5"
             name="comment"
             id="comment"

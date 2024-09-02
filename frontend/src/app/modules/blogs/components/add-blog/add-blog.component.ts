@@ -8,7 +8,6 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class AddBlogComponent implements OnInit {
   addEditBlogForm!: FormGroup;
-  formData: FormData = new FormData();
   tags: any[] = [];
   @ViewChild('tagsInput') tagsInput!: ElementRef;
   constructor(private fb: FormBuilder) {}
@@ -38,17 +37,16 @@ export class AddBlogComponent implements OnInit {
   }
 
   onAddEditFormSubmit() {
-    console.log('add edit form value', this.addEditBlogForm.value);
+    console.log('add edit form ', this.addEditBlogForm.value);
   }
   onUploadCoverPhoto(event: any) {
+    let formData: FormData = new FormData();
     let coverPhoto = event.target.files[0];
-    this.formData.append('picture', coverPhoto);
-    this.addEditBlogForm
-      .get('coverPhoto')
-      ?.setValue(this.formData.get('picture'));
+    formData.append('picture', coverPhoto);
+    this.addEditBlogForm.get('coverPhoto')?.setValue(formData.get('picture'));
   }
 
-  onGetTextEditorValue(event:any){
-      
+  onGetTextEditorValue(event: any) {
+    console.log('text editor ', event);
   }
 }
