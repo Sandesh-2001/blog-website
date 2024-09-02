@@ -16,7 +16,7 @@ export class AddBlogComponent implements OnInit {
       title: [''],
       author: new FormControl(),
       shortDesc: [''],
-      publishedDate: [''],
+      publishDate: [''],
       timeToRead: [''],
       coverPhoto: [''],
       treanding: [''],
@@ -46,7 +46,7 @@ export class AddBlogComponent implements OnInit {
     this.addEditBlogForm.get('coverPhoto')?.setValue(formData.get('picture'));
   }
 
-  onGetTextEditorValue(event: any) {
-    console.log('text editor ', event);
-  }
+  // onGetTextEditorValue(event: any) {
+  //   this.addEditBlogForm.get('shortDesc')?.setValue(event);
+  // }
 }
