@@ -1,0 +1,30 @@
+{
+    "sourceFile": "frontend/src/app/modules/error/pages/error-404/error-404.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1725268910149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725268920928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,8 @@\n     <p class=\"text-base font-semibold leading-8 text-white\">404</p>\n     <h1 class=\"mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl\">Page not found</h1>\n     <p class=\"mt-4 text-base text-white/70 sm:mt-6\">Sorry, we couldn’t find the page you’re looking for.</p>\n     <div class=\"mt-10 flex justify-center\">\n-      <a href=\"#\" class=\"text-sm font-semibold leading-7 text-white\"><span aria-hidden=\"true\">&larr;</span> Back to home</a>\n+      <a router class=\"text-sm font-semibold leading-7 text-white\"><span aria-hidden=\"true\">&larr;</span> Back to home</a>\n     </div>\n   </div>\n </main>\n"
+                },
+                {
+                    "date": 1725268928402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,8 @@\n     <p class=\"text-base font-semibold leading-8 text-white\">404</p>\n     <h1 class=\"mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl\">Page not found</h1>\n     <p class=\"mt-4 text-base text-white/70 sm:mt-6\">Sorry, we couldn’t find the page you’re looking for.</p>\n     <div class=\"mt-10 flex justify-center\">\n-      <a routerLink=\"\" class=\"text-sm font-semibold leading-7 text-white\"><span aria-hidden=\"true\">&larr;</span> Back to home</a>\n+      <a routerLink=\"/blog\" class=\"text-sm font-semibold leading-7 text-white\"><span aria-hidden=\"true\">&larr;</span> Back to home</a>\n     </div>\n   </div>\n </main>\n"
+                },
+                {
+                    "date": 1725268945946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   <html class=\"h-full\">\n   <body class=\"h-full\">\n   ```\n -->\n-<main class=\"relative isolate min-h-s\">\n+<main class=\"relative isolate min-h-screen\">\n   <img\n     src=\"https://images.unsplash.com/photo-1545972154-9bb223aac798?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3050&q=80&exp=8&con=-15&sat=-75\"\n     alt=\"\"\n     class=\"absolute inset-0 -z-10 h-full w-full object-cover object-top\"\n"
+                }
+            ],
+            "date": 1725268910149,
+            "name": "Commit-0",
+            "content": "<!--\n  This example requires updating your template:\n\n  ```\n  <html class=\"h-full\">\n  <body class=\"h-full\">\n  ```\n-->\n<main class=\"relative isolate min-h-full\">\n  <img src=\"https://images.unsplash.com/photo-1545972154-9bb223aac798?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3050&q=80&exp=8&con=-15&sat=-75\" alt=\"\" class=\"absolute inset-0 -z-10 h-full w-full object-cover object-top\">\n  <div class=\"mx-auto max-w-7xl px-6 py-32 text-center sm:py-40 lg:px-8\">\n    <p class=\"text-base font-semibold leading-8 text-white\">404</p>\n    <h1 class=\"mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl\">Page not found</h1>\n    <p class=\"mt-4 text-base text-white/70 sm:mt-6\">Sorry, we couldn’t find the page you’re looking for.</p>\n    <div class=\"mt-10 flex justify-center\">\n      <a href=\"#\" class=\"text-sm font-semibold leading-7 text-white\"><span aria-hidden=\"true\">&larr;</span> Back to home</a>\n    </div>\n  </div>\n</main>\n"
+        }
+    ]
+}

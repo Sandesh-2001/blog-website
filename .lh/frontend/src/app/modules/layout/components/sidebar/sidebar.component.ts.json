@@ -1,0 +1,22 @@
+{
+    "sourceFile": "frontend/src/app/modules/layout/components/sidebar/sidebar.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1725022589934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725022792865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n   templateUrl: './sidebar.component.html',\n   styleUrls: ['./sidebar.component.css']\n })\n export class SidebarComponent {\n-  \n+  isOpenSidebar :\n }\n"
+                }
+            ],
+            "date": 1725022589934,
+            "name": "Commit-0",
+            "content": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-sidebar',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './sidebar.component.html',\n  styleUrls: ['./sidebar.component.css']\n})\nexport class SidebarComponent {\n  \n}\n"
+        }
+    ]
+}

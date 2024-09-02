@@ -1,0 +1,38 @@
+{
+    "sourceFile": "frontend/src/app/modules/blogs/blogs.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1725023744293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725023785501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import { NgModule } from '@angular/core';\n import { CommonModule } from '@angular/common';\n \n import { BlogsRoutingModule } from './blogs-routing.module';\n+import { LayoutComponent } from './layout.component';\n \n \n @NgModule({\n   declarations: [\n-    LayoutComponent\n+  \n   ],\n   imports: [\n     CommonModule,\n     BlogsRoutingModule\n"
+                },
+                {
+                    "date": 1725268250050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,20 @@\n import { NgModule } from '@angular/core';\n import { CommonModule } from '@angular/common';\n \n import { BlogsRoutingModule } from './blogs-routing.module';\n-import { LayoutComponent } from './layout.component';\n+import { BlogsComponent } from './blogs.component';\n+import { BlogListComponent } from './components/blog-list/blog-list.component';\n+import { AddBlogComponent } from './add-blog/add-blog.component';\n \n \n @NgModule({\n   declarations: [\n   \n+  \n+    BlogsComponent,\n+          BlogListComponent,\n+          AddBlogComponent\n   ],\n   imports: [\n     CommonModule,\n     BlogsRoutingModule\n"
+                },
+                {
+                    "date": 1725268282127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n import { CommonModule } from '@angular/common';\n \n import { BlogsRoutingModule } from './blogs-routing.module';\n import { BlogsComponent } from './blogs.component';\n-import { BlogListComponent } from './components/blog-list/blog-list.component';\n-import { AddBlogComponent } from './add-blog/add-blog.component';\n+import { BlogListComponent } from './blog-list/blog-list.component';\n+import { AddBlogComponent } from './blog-list/add-blog/add-blog.component';\n \n \n @NgModule({\n   declarations: [\n"
+                },
+                {
+                    "date": 1725268297976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n import { CommonModule } from '@angular/common';\n \n import { BlogsRoutingModule } from './blogs-routing.module';\n import { BlogsComponent } from './blogs.component';\n-import { BlogListComponent } from './blog-list/blog-list.component';\n-import { AddBlogComponent } from './blog-list/add-blog/add-blog.component';\n+import { BlogListComponent } from './components/blog-list/blog-list.component';\n+import { AddBlogComponent } from './components/blog-list/add-blog/add-blog.component';\n \n \n @NgModule({\n   declarations: [\n"
+                },
+                {
+                    "date": 1725268304835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n import { BlogsRoutingModule } from './blogs-routing.module';\n import { BlogsComponent } from './blogs.component';\n import { BlogListComponent } from './components/blog-list/blog-list.component';\n-import { AddBlogComponent } from './components/blog-list/add-blog/add-blog.component';\n+import { AddBlogComponent } from './components/add-blog/add-blog.component';\n \n \n @NgModule({\n   declarations: [\n"
+                }
+            ],
+            "date": 1725023744293,
+            "name": "Commit-0",
+            "content": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { BlogsRoutingModule } from './blogs-routing.module';\n\n\n@NgModule({\n  declarations: [\n    LayoutComponent\n  ],\n  imports: [\n    CommonModule,\n    BlogsRoutingModule\n  ]\n})\nexport class BlogsModule { }\n"
+        }
+    ]
+}

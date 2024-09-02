@@ -1,0 +1,34 @@
+{
+    "sourceFile": "frontend/src/app/modules/layout/layout.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1725020391817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725020409390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+<div>\n+    <div class=\"navbar\">\n+        \n+    </div>\n+</div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725020813410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <div>\n-    <div class=\"navbar\">\n-        \n-    </div>\n-</div>\n\\ No newline at end of file\n+    \n+  <div class=\"navbar\">\n+    <app-navbar></app-navbar>\n+  </div>\n+</div>\n"
+                },
+                {
+                    "date": 1725020821204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <div>\n-    <h1\n+    <h1>hello</h1>\n   <div class=\"navbar\">\n     <app-navbar></app-navbar>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1725021403345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n   <div class=\"navbar\">\n     <app-navbar></app-navbar>\n   </div>\n   <div class=\"sidebar\">\n-    <app\n+    <app-sidebar></app-sidebar>\n   </div>\n </div>\n"
+                }
+            ],
+            "date": 1725020391817,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

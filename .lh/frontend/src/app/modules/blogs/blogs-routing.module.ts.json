@@ -1,0 +1,62 @@
+{
+    "sourceFile": "frontend/src/app/modules/blogs/blogs-routing.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1725268453310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725268462377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n   {\n-    path\n+    path: \"\",\n+    component: blogs\n   }\n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1725268469001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n+import { BlogsComponent } from './blogs.component';\n \n const routes: Routes = [\n   {\n     path: \"\",\n-    component: blogs\n+    component: BlogsComponent,\n+    children: \n   }\n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1725268477503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,12 @@\n const routes: Routes = [\n   {\n     path: \"\",\n     component: BlogsComponent,\n-    children: \n+    children: [{\n+      path:'',\n+      blo\n+    }]\n   }\n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1725268487727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,16 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n import { BlogsComponent } from './blogs.component';\n+import { BlogListComponent } from './components/blog-list/blog-list.component';\n \n const routes: Routes = [\n   {\n     path: \"\",\n     component: BlogsComponent,\n     children: [{\n       path:'',\n-      blo\n+      component: BlogListComponent\n     }]\n   }\n ];\n \n"
+                },
+                {
+                    "date": 1725268493154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,18 +4,20 @@\n import { BlogListComponent } from './components/blog-list/blog-list.component';\n \n const routes: Routes = [\n   {\n-    path: \"\",\n+    path: '',\n     component: BlogsComponent,\n-    children: [{\n-      path:'',\n-      component: BlogListComponent\n-    }]\n-  }\n+    children: [\n+      {\n+        path: '',\n+        component: BlogListComponent,\n+      },\n+    ],\n+  },\n ];\n \n @NgModule({\n   imports: [RouterModule.forChild(routes)],\n-  exports: [RouterModule]\n+  exports: [RouterModule],\n })\n-export class BlogsRoutingModule { }\n+export class BlogsRoutingModule {}\n"
+                },
+                {
+                    "date": 1725268504761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n import { BlogsComponent } from './blogs.component';\n import { BlogListComponent } from './components/blog-list/blog-list.component';\n+import { AddBlogComponent } from './components/add-blog/add-blog.component';\n \n const routes: Routes = [\n   {\n     path: '',\n@@ -10,9 +11,12 @@\n     children: [\n       {\n         path: '',\n         component: BlogListComponent,\n-      },\n+      },{\n+        path:'add-blog',\n+        component:AddBlogComponent\n+      }\n     ],\n   },\n ];\n \n"
+                },
+                {
+                    "date": 1725268512562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,11 @@\n         component: BlogListComponent,\n       },{\n         path:'add-blog',\n         component:AddBlogComponent\n+      },\n+      {\n+        path:''\n       }\n     ],\n   },\n ];\n"
+                },
+                {
+                    "date": 1725268520160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         path:'add-blog',\n         component:AddBlogComponent\n       },\n       {\n-        path:''\n+        path:'blog-detail/:id'\n       }\n     ],\n   },\n ];\n"
+                },
+                {
+                    "date": 1725268528957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,10 @@\n         path:'add-blog',\n         component:AddBlogComponent\n       },\n       {\n-        path:'blog-detail/:id'\n+        path:'blog-detail/:name',\n+        component:\n       }\n     ],\n   },\n ];\n"
+                },
+                {
+                    "date": 1725268534758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n         path:'add-blog',\n         component:AddBlogComponent\n       },\n       {\n-        path:'blog-detail/:name',\n-        component:\n+        path:'blog-detail/:title',\n+        component: \n       }\n     ],\n   },\n ];\n"
+                },
+                {
+                    "date": 1725268539844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import { RouterModule, Routes } from '@angular/router';\n import { BlogsComponent } from './blogs.component';\n import { BlogListComponent } from './components/blog-list/blog-list.component';\n import { AddBlogComponent } from './components/add-blog/add-blog.component';\n+import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';\n \n const routes: Routes = [\n   {\n     path: '',\n@@ -11,16 +12,17 @@\n     children: [\n       {\n         path: '',\n         component: BlogListComponent,\n-      },{\n-        path:'add-blog',\n-        component:AddBlogComponent\n       },\n       {\n-        path:'blog-detail/:title',\n-        component: \n-      }\n+        path: 'add-blog',\n+        component: AddBlogComponent,\n+      },\n+      {\n+        path: 'blog-detail/:title',\n+        component: BlogDetailComponent,\n+      },\n     ],\n   },\n ];\n \n"
+                }
+            ],
+            "date": 1725268453310,
+            "name": "Commit-0",
+            "content": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  {\n    path\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class BlogsRoutingModule { }\n"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "sourceFile": "frontend/src/app/modules/layout/layout.routing.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1725023610856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725267681775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,12 @@\n const routes: Routes = [{ \n     path: '',\n     component: LayoutComponent,\n     children: [\n-     \n+      {\n+        path:'',\n+        component: \n+      }\n     ] \n   }];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1725267771449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,21 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n import { LayoutComponent } from './layout.component';\n+import { BlogsComponent } from '../blogs/blogs.component';\n \n-const routes: Routes = [{ \n+const routes: Routes = [\n+  {\n     path: '',\n     component: LayoutComponent,\n     children: [\n       {\n-        path:'',\n-        component: \n-      }\n-    ] \n-  }];\n+        path: 'blogs',\n+        component: BlogsComponent,\n+      },\n+    ],\n+  },\n+];\n \n @NgModule({\n   imports: [RouterModule.forChild(routes)],\n   exports: [RouterModule],\n"
+                },
+                {
+                    "date": 1725267783999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,13 @@\n       {\n         path: 'blogs',\n         component: BlogsComponent,\n       },\n+      {\n+        path:'',\n+        redirectTo:'blogs',\n+        \n+      }\n     ],\n   },\n ];\n \n"
+                },
+                {
+                    "date": 1725268408597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,15 +9,15 @@\n     component: LayoutComponent,\n     children: [\n       {\n         path: 'blogs',\n-        component: BlogsComponent,\n+        \n       },\n       {\n-        path:'',\n-        redirectTo:'blogs',\n-        \n-      }\n+        path: '',\n+        redirectTo: 'blogs',\n+        pathMatch: 'full',\n+      },\n     ],\n   },\n ];\n \n"
+                },
+                {
+                    "date": 1725268421666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     component: LayoutComponent,\n     children: [\n       {\n         path: 'blogs',\n-        \n+        loadChildren : ()=>import('./')\n       },\n       {\n         path: '',\n         redirectTo: 'blogs',\n"
+                },
+                {
+                    "date": 1725268428712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     component: LayoutComponent,\n     children: [\n       {\n         path: 'blogs',\n-        loadChildren : ()=>import('./')\n+        loadChildren : ()=>import('./../blogs/')\n       },\n       {\n         path: '',\n         redirectTo: 'blogs',\n"
+                },
+                {
+                    "date": 1725268435130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     component: LayoutComponent,\n     children: [\n       {\n         path: 'blogs',\n-        loadChildren : ()=>import('./../blogs/')\n+        loadChildren : ()=>import('./../blogs/blogs.module')\n       },\n       {\n         path: '',\n         redirectTo: 'blogs',\n"
+                },
+                {
+                    "date": 1725268441985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     component: LayoutComponent,\n     children: [\n       {\n         path: 'blogs',\n-        loadChildren : ()=>import('./../blogs/blogs.module').then((m))\n+        loadChildren : ()=>import('./../blogs/blogs.module').then((m)=>m.BlogsModule)\n       },\n       {\n         path: '',\n         redirectTo: 'blogs',\n"
+                }
+            ],
+            "date": 1725023610856,
+            "name": "Commit-0",
+            "content": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { LayoutComponent } from './layout.component';\n\nconst routes: Routes = [{ \n    path: '',\n    component: LayoutComponent,\n    children: [\n     \n    ] \n  }];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule],\n})\nexport class LayoutRoutingModule {}\n"
+        }
+    ]
+}

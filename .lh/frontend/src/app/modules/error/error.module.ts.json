@@ -1,0 +1,22 @@
+{
+    "sourceFile": "frontend/src/app/modules/error/error.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1725268744426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725268752139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { NgModule } from '@angular/core';\n import { CommonModule } from '@angular/common';\n import { Routes, RouterModule } from '@angular/router';\n import { ErrorComponent } from './error.component';\n+import { ErrorRoutingModule } from './error.routing.module';\n \n \n const routes: Routes = [\n   { path: '', component: ErrorComponent }\n@@ -14,8 +15,8 @@\n   ],\n   imports: [\n     CommonModule,\n \n-      E\n+      ErrorRoutingModule\n   ]\n })\n export class ErrorModule { }\n"
+                }
+            ],
+            "date": 1725268744426,
+            "name": "Commit-0",
+            "content": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { Routes, RouterModule } from '@angular/router';\nimport { ErrorComponent } from './error.component';\n\n\nconst routes: Routes = [\n  { path: '', component: ErrorComponent }\n];\n\n@NgModule({\n  declarations: [\n    ErrorComponent\n  ],\n  imports: [\n    CommonModule,\n    \n    RouterModule.forChild(routes)\n  ]\n})\nexport class ErrorModule { }\n"
+        }
+    ]
+}

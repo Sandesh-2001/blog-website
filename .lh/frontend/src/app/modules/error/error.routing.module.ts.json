@@ -1,0 +1,66 @@
+{
+    "sourceFile": "frontend/src/app/modules/error/error.routing.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1725268660396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725268667969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import {}\n\\ No newline at end of file\n+import { RouterModule, Routes } from \"@angular/router\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725268676704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-import { RouterModule, Routes } from \"@angular/router\";\n\\ No newline at end of file\n+import { RouterModule, Routes } from \"@angular/router\";\n+import { NgModule } from \"@angular/core\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725268683203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,4 @@\n import { RouterModule, Routes } from \"@angular/router\";\n-import { NgModule } from \"@angular/core\";\n\\ No newline at end of file\n+import { NgModule } from \"@angular/core\";\n+\n+const routes : Routes \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725268690845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n import { RouterModule, Routes } from \"@angular/router\";\n import { NgModule } from \"@angular/core\";\n \n-const routes : Routes \n\\ No newline at end of file\n+const routes : Routes  = [];\n+\n+@NgModule()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725268701901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,7 @@\n import { NgModule } from \"@angular/core\";\n \n const routes : Routes  = [];\n \n-@NgModule()\n\\ No newline at end of file\n+@NgModule({\n+    imports : [Router]\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725268707390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n \n const routes : Routes  = [];\n \n @NgModule({\n-    imports : [Router]\n+    imports : [RouterModule.forChild(routers)]\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725268712424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,7 @@\n \n const routes : Routes  = [];\n \n @NgModule({\n-    imports : [RouterModule.forChild(routers)]\n+    imports : [RouterModule.forChild(routes)],\n+    exp\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725268718151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n const routes : Routes  = [];\n \n @NgModule({\n     imports : [RouterModule.forChild(routes)],\n-    exp\n+    exports: []\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725268724419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,8 @@\n const routes : Routes  = [];\n \n @NgModule({\n     imports : [RouterModule.forChild(routes)],\n-    exports: []\n-})\n\\ No newline at end of file\n+    exports: [RouterModule]\n+})\n+\n+export \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725268735424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,5 @@\n     imports : [RouterModule.forChild(routes)],\n     exports: [RouterModule]\n })\n \n-export \n\\ No newline at end of file\n+export class ErrorRoutingModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725268865722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n import { RouterModule, Routes } from \"@angular/router\";\n import { NgModule } from \"@angular/core\";\n \n-const routes : Routes  = [];\n+const routes : Routes  = [\n+    {\n+        path \n+    }\n+];\n \n @NgModule({\n     imports : [RouterModule.forChild(routes)],\n     exports: [RouterModule]\n"
+                },
+                {
+                    "date": 1725268875797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n import { RouterModule, Routes } from \"@angular/router\";\n import { NgModule } from \"@angular/core\";\n+import { Error404Component } from \"./pages/error-404/error-404.component\";\n \n const routes : Routes  = [\n     {\n         path : '',\n-        c\n+        component : Error404Component\n     }\n ];\n \n @NgModule({\n"
+                }
+            ],
+            "date": 1725268660396,
+            "name": "Commit-0",
+            "content": "import {}"
+        }
+    ]
+}

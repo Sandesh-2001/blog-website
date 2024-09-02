@@ -1,0 +1,54 @@
+{
+    "sourceFile": "frontend/src/app/modules/layout/layout-routing.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1725020895141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725023159384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n import { LayoutComponent } from './layout.component';\n \n-const routes: Routes = [,{ path: '', component: LayoutComponent }];\n+const routes: Routes = [\n+  \n+  {path:''},{ path: '', component: LayoutComponent }];\n \n @NgModule({\n   imports: [RouterModule.forChild(routes)],\n   exports: [RouterModule]\n"
+                },
+                {
+                    "date": 1725023165796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { LayoutComponent } from './layout.component';\n \n const routes: Routes = [\n   \n-  {path:''},{ path: '', component: LayoutComponent }];\n+  { path: '', component: LayoutComponent }];\n \n @NgModule({\n   imports: [RouterModule.forChild(routes)],\n   exports: [RouterModule]\n"
+                },
+                {
+                    "date": 1725023172490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { LayoutComponent } from './layout.component';\n \n const routes: Routes = [\n   \n-  { path: '', component: LayoutComponent }];\n+  { path: '', component: LayoutComponent,  }];\n \n @NgModule({\n   imports: [RouterModule.forChild(routes)],\n   exports: [RouterModule]\n"
+                },
+                {
+                    "date": 1725023181855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,12 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n import { LayoutComponent } from './layout.component';\n \n-const routes: Routes = [\n-  \n-  { path: '', component: LayoutComponent,  }];\n+const routes: Routes = [{ path: '',\n+   component: LayoutComponent, children: [] }];\n \n @NgModule({\n   imports: [RouterModule.forChild(routes)],\n-  exports: [RouterModule]\n+  exports: [RouterModule],\n })\n-export class LayoutRoutingModule { }\n+export class LayoutRoutingModule {}\n"
+                },
+                {
+                    "date": 1725023191655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n import { RouterModule, Routes } from '@angular/router';\n import { LayoutComponent } from './layout.component';\n \n const routes: Routes = [{ path: '',\n-   component: LayoutComponent, children: [] }];\n+   component: LayoutComponent,\n+    children: [] \n+  }];\n \n @NgModule({\n   imports: [RouterModule.forChild(routes)],\n   exports: [RouterModule],\n"
+                },
+                {
+                    "date": 1725023197777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n import { LayoutComponent } from './layout.component';\n \n-const routes: Routes = [{ path: '',\n-   component: LayoutComponent,\n+const routes: Routes = [{ \n+    path: '',\n+    component: LayoutComponent,\n     children: [] \n   }];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1725023203299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,13 @@\n \n const routes: Routes = [{ \n     path: '',\n     component: LayoutComponent,\n-    children: [] \n+    children: [\n+      {\n+        path:''\n+      }\n+    ] \n   }];\n \n @NgModule({\n   imports: [RouterModule.forChild(routes)],\n"
+                },
+                {
+                    "date": 1725023209736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,10 @@\n     path: '',\n     component: LayoutComponent,\n     children: [\n       {\n-        path:''\n+        path:'',\n+        component:\n       }\n     ] \n   }];\n \n"
+                },
+                {
+                    "date": 1725023217750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+import { NgModule } from '@angular/core';\n+import { RouterModule, Routes } from '@angular/router';\n+import { LayoutComponent } from './layout.component';\n+\n+const routes: Routes = [{ \n+    path: '',\n+    component: LayoutComponent,\n+    children: [\n+      {\n+        path:'',\n+        component:blog\n+      }\n+    ] \n+  }];\n+\n+@NgModule({\n+  imports: [RouterModule.forChild(routes)],\n+  exports: [RouterModule],\n+})\n+export class LayoutRoutingModule {}\n"
+                }
+            ],
+            "date": 1725020895141,
+            "name": "Commit-0",
+            "content": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { LayoutComponent } from './layout.component';\n\nconst routes: Routes = [,{ path: '', component: LayoutComponent }];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class LayoutRoutingModule { }\n"
+        }
+    ]
+}
