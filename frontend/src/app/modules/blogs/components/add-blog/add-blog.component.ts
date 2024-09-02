@@ -42,11 +42,13 @@ export class AddBlogComponent implements OnInit {
   }
   onUploadCoverPhoto(event: any) {
     let coverPhoto = event.target.files[0];
-    console.log('photo', event.target.files[0]);
-    this.formData.append('picture', event.target.files[0]);
-    setTimeout(() => {
-      console.log('form data', this.formData);
-    }, 1000);
-    this.addEditBlogForm.get('coverPhoto')?.setValue(this.formData);
+    this.formData.append('picture', coverPhoto);
+    this.addEditBlogForm
+      .get('coverPhoto')
+      ?.setValue(this.formData.get('picture'));
+  }
+
+  onGetTextEditorValue(event:any){
+      
   }
 }
