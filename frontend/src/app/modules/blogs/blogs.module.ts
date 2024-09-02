@@ -6,20 +6,17 @@ import { BlogsComponent } from './blogs.component';
 import { BlogListComponent } from './components/blog-list/blog-list.component';
 import { AddBlogComponent } from './components/add-blog/add-blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TextEditorComponent } from './components/text-editor/text-editor.component';
 
 @NgModule({
   declarations: [
-  
-  
     BlogsComponent,
-          BlogListComponent,
-          AddBlogComponent,
-          BlogDetailComponent
+    BlogListComponent,
+    AddBlogComponent,
+    BlogDetailComponent,
+    TextEditorComponent,
   ],
-  imports: [
-    CommonModule,
-    BlogsRoutingModule
-  ]
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, BlogsRoutingModule],
 })
-export class BlogsModule { }
+export class BlogsModule {}

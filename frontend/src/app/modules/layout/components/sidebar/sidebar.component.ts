@@ -10,4 +10,9 @@ import { CommonModule } from '@angular/common';
 })
 export class SidebarComponent {
   isOpenSidebar: boolean = false;
+  openProfileMenu: boolean = false;
+
+  onOpenProfileMenu() {
+    this.openProfileMenu = !this.openProfileMenu;
+  }
 }
