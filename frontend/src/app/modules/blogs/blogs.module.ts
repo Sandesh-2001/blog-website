@@ -8,6 +8,7 @@ import { AddBlogComponent } from './components/add-blog/add-blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextEditorComponent } from './components/text-editor/text-editor.component';
+import { SharedModule } from "../../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,6 @@ import { TextEditorComponent } from './components/text-editor/text-editor.compon
     BlogDetailComponent,
     TextEditorComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, BlogsRoutingModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, BlogsRoutingModule, SharedModule],
 })
 export class BlogsModule {}

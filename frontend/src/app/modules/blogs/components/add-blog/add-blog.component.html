@@ -63,20 +63,22 @@
             class="block text-sm font-medium leading-6 text-gray-900"
             >Add tags</label
           >
-          <div class="mt-2 flex rounded-md shadow-sm border border-gray-400">
-            <div class="max-w-64 overflow-x-auto flex">
+          <div
+            class="mt-2 flex flex-wrap rounded-md shadow-sm border border-gray-400"
+          >
+            <div class="overflow-x-auto flex flex-wrap">
               <span
                 *ngFor="let tag of tags"
                 class="inline-flex justify-between mx-1 hover:bg-indigo-100 hover:cursor-pointer items-center rounded-md border my-1 py-2 border-gray-300 ps-2 pe-1 text-gray-800 sm:text-sm"
               >
-                <span>{{ tag }}</span>
+                <span>{{ tag | checkEmpty }}</span>
                 <svg
-                  (click)="removeTag(tag)"
+                  (click)="onRemoveTag(tag)"
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-x ms-2 me-0 hover:border hover:border-gray-500 hover:rounded-md"
+                  class="bi bi-x ms-2 me-0 hover:border hover:bg-gray-300 hover:border-gray-500 hover:rounded-md"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -89,9 +91,10 @@
               #tagsInput
               type="text"
               (keyup.enter)="onAddTag($event)"
+              (keyup.backspace)="onRemoveTag(tags.length - 1, $event)"
               name="tags"
               id="tags"
-              class="block w-full min-w-0 ps-2 flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              class="block w-full min-w-16 ps-2 flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               placeholder="Tag"
             />
           </div>
@@ -183,14 +186,14 @@
       <label
         for="comment"
         class="block text-sm font-medium leading-6 text-gray-900"
-        >Add your comment</label
+        >Short description</label
       >
       <div class="mt-2">
         <textarea
           formControlName="shortDesc"
           rows="4"
-          name="comment"
-          id="comment"
+          name="short-desc"
+          id="short-desc"
           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         ></textarea>
       </div>
