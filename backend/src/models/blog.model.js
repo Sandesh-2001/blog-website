@@ -5,7 +5,7 @@ const blogSchema = mongoose.Schema(
     title: { type: String, require: true },
     author: { type: String },
     shortDesc: { type: String },
-    publishDate: { type: String },
+    publishDate: { type: Date },
     timeToRead: { type: String },
     coverPhoto: { type: String },
     treanding: { type: String },
@@ -13,6 +13,9 @@ const blogSchema = mongoose.Schema(
   },
   { timestamps: true }
 );
-console.log("blog schema", blogSchema);
+
+
 const blogModel = mongoose.model("blogs", blogSchema);
+
+blogModel
 module.exports = blogModel;

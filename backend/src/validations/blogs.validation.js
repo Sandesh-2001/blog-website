@@ -1,10 +1,11 @@
 const Joi = require("joi");
 const addBlog = Joi.object({
   title: Joi.string().required(),
+  author: Joi.string().default("sandesh default"),
   shortDesc: Joi.string().required(),
-  publishDate: Joi.date().required(),
+  publishDate: Joi.date().iso().default("2024-01-01T00:00:00Z"),
   timeToRead: Joi.number().required(),
-  coverPhoto: Joi.string().required(),
+  coverPhoto: Joi.optional(),
   treanding: Joi.boolean().required(),
   tags: Joi.array().min(1).required(),
 });

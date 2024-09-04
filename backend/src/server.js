@@ -1,11 +1,11 @@
 const dotenv = require("dotenv");
-// console.log("config", dotenv.config({ path: __dirname + "/config.env" }));
+// ("config", dotenv.config({ path: __dirname + "/config.env" }));
 dotenv.config({ path: __dirname + "/config.env" });
 const app = require("./app");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 8080;
-console.log("port", PORT);
+"port", PORT;
 mongoose
   .connect(process.env.MONGO_URL, { dbName: "blogs" })
   .then(() => {
