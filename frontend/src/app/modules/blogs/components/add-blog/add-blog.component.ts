@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { BlogService } from '../../services/blog.service';
 
 @Component({
   selector: 'app-add-blog',
@@ -11,7 +13,11 @@ export class AddBlogComponent implements OnInit {
   tags: any[] = [];
   @ViewChild('tagsInput') tagsInput!: ElementRef;
   flag: boolean = false;
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private _toastrService: ToastrService,
+    private _blogServie: BlogService
+  ) {}
   ngOnInit(): void {
     this.addEditBlogForm = this.fb.group({
       title: [''],
@@ -20,7 +26,7 @@ export class AddBlogComponent implements OnInit {
       publishDate: [''],
       timeToRead: [''],
       coverPhoto: [''],
-      treanding: [''],
+      treanding: [true],
       tags: [],
     });
   }
@@ -60,6 +66,15 @@ export class AddBlogComponent implements OnInit {
 
   onAddEditFormSubmit() {
     console.log('add edit form ', this.addEditBlogForm.value);
+    this._blogServie.addBlog(this.addEditBlogForm.value).subscribe({
+      next: (data: any) => {
+        
+        this._toastrService.success('Blog added successfully...', 'Success');
+      },
+      error: (err) => {
+        this._toastrService.error(err.message, 'Error');
+      },
+    });
   }
   onUploadCoverPhoto(event: any) {
     let formData: FormData = new FormData();

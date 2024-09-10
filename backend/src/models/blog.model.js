@@ -11,7 +11,8 @@ const blogSchema = mongoose.Schema(
     treanding: { type: String },
     tags: { type: Array },
   },
-  { timestamps: true }
+  { timestamps: true },
+  { typeKey: '$type' }
 );
 
 
