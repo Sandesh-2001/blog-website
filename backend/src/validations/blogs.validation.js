@@ -6,7 +6,7 @@ const addBlog = Joi.object({
   publishDate: Joi.date().iso().default("2024-01-01T00:00:00Z"),
   timeToRead: Joi.number().required(),
   coverPhoto: Joi.optional(),
-  treanding: Joi.boolean().required(),
+  trending: Joi.boolean().optional(),
   tags: Joi.array().min(1).required(),
 });
 
