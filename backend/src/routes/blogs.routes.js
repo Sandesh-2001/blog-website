@@ -13,7 +13,7 @@ router
     uploadCloudinary,
     middlewares(indexValidation.blogValidations.addBlog),
     indexController.blogsController.createBlog
-  );
+  ).get(indexController.blogsController.getBlogs);
 
 router
   .route("/:id")

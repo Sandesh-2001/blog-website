@@ -9,15 +9,15 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'blogs',
+        path: '',
         loadChildren: () =>
           import('./../blogs/blogs.module').then((m) => m.BlogsModule),
       },
-      {
-        path: '',
-        redirectTo: 'blogs',
-        pathMatch: 'full',
-      },
+      // {
+      //   path: '',
+      //   redirectTo: 'blogs',
+      //   pathMatch: 'full',
+      // },
     ],
   },
 ];

@@ -12,4 +12,8 @@ export class BlogService {
   addBlog(data: Blog) {
     return this._httpClient.post(`${this.API_URL}/blogs`, data);
   }
+
+  fetchAllBlogs() {
+    return this._httpClient.get(`${this.API_URL}/blogs`);
+  }
 }

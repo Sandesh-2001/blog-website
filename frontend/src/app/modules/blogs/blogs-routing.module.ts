@@ -4,12 +4,17 @@ import { BlogsComponent } from './blogs.component';
 import { BlogListComponent } from './components/blog-list/blog-list.component';
 import { AddBlogComponent } from './components/add-blog/add-blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
-
+console.log('called');
 const routes: Routes = [
   {
-    path: '',
+    path: 'blogs',
     component: BlogsComponent,
     children: [
+      // {
+      //   path: '',
+      //   redirectTo: '',
+      //   pathMatch: 'full',
+      // },
       {
         path: '',
         component: BlogListComponent,
@@ -23,6 +28,11 @@ const routes: Routes = [
         component: BlogDetailComponent,
       },
     ],
+  },
+  {
+    path: '',
+    redirectTo: 'blogs',
+    pathMatch: 'full',
   },
 ];
 

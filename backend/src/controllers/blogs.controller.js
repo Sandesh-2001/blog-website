@@ -5,7 +5,7 @@ const createBlog = asyncErrorHandler(async (req, res, next) => {
   console.log('req.body======>>>', req.body)
 
   const blogData = await indexModel.blogModel.create({ ...req.body });
-  res.status(200).json({ status: "success", data: blogData });
+  res.status(200).json({ status: "success", result: blogData });
 });
 
 const deleteBlog = asyncErrorHandler(async (req, res, next) => {
@@ -13,15 +13,20 @@ const deleteBlog = asyncErrorHandler(async (req, res, next) => {
   console.log("id is ", id);
   const deleteBlog = await indexModel.blogModel.findByIdAndDelete(id);
   console.log('deleted', deleteBlog)
-  res.status(200).json({ status: "success", data: null })
+  res.status(200).json({ status: "success", result: null })
 });
 
 const editBlog = asyncErrorHandler(async (req, res, next) => {
   const data = req.body;
   const { id } = req.params;
   const editedBlog = await indexModel.blogModel.findByIdAndUpdate(id, data, { new: true });
-  res.status(200).json({ status: "success", data: editedBlog })
+  res.status(200).json({ status: "success", result: editedBlog })
 })
 
-module.exports = { createBlog, deleteBlog, editBlog };
+const getBlogs = asyncErrorHandler(async (req, res, next) => {
+  const blogsData = await indexModel.blogModel.find();
+  res.status(200).json({ status: "success", result: blogsData })
+})
+
+module.exports = { createBlog, deleteBlog, editBlog, getBlogs };
 
