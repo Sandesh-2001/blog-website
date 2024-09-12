@@ -11,6 +11,7 @@ import { BlogService } from '../../services/blog.service';
 export class AddBlogComponent implements OnInit {
   addEditBlogForm!: FormGroup;
   tags: any[] = [];
+  coverPhoto: any;
   @ViewChild('tagsInput') tagsInput!: ElementRef;
   flag: boolean = false;
   constructor(
@@ -20,14 +21,14 @@ export class AddBlogComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.addEditBlogForm = this.fb.group({
-      title: [''],
-      author: new FormControl(),
-      shortDesc: [''],
+      title: ['Demo text'],
+      author: new FormControl('Sandesh'),
+      shortDesc: ['Hello this is short desc'],
       publishDate: [''],
-      timeToRead: [''],
+      timeToRead: [23],
       coverPhoto: [''],
-      treanding: [true],
-      tags: [],
+      trending: [true],
+      tags: [['sdfsdf', 'fsdf', 'sdf', 'sdfds', 'fsd']],
     });
   }
 
@@ -65,10 +66,30 @@ export class AddBlogComponent implements OnInit {
   }
 
   onAddEditFormSubmit() {
+    let formData = new FormData();
     console.log('add edit form ', this.addEditBlogForm.value);
-    this._blogServie.addBlog(this.addEditBlogForm.value).subscribe({
+    delete this.addEditBlogForm.value['coverPhoto'];
+    delete this.addEditBlogForm.value['tags'];
+    this.tags.forEach((tag) => {
+      formData.append('tags[]', tag);
+    });
+    formData.append('coverPhoto', this.coverPhoto);
+    Object.entries(this.addEditBlogForm.value).forEach((entry: any) => {
+      console.log(
+        'entries of blog form==>>',
+        entry[0],
+        'entry 2===>>',
+        entry[1]
+      );
+      let name = entry[0];
+      let value = entry[1];
+      formData.append(name, value);
+    });
+
+    console.log('form data is', formData);
+
+    this._blogServie.addBlog(formData).subscribe({
       next: (data: any) => {
-        
         this._toastrService.success('Blog added successfully...', 'Success');
       },
       error: (err) => {
@@ -77,10 +98,10 @@ export class AddBlogComponent implements OnInit {
     });
   }
   onUploadCoverPhoto(event: any) {
-    let formData: FormData = new FormData();
-    let coverPhoto = event.target.files[0];
-    formData.append('picture', coverPhoto);
-    this.addEditBlogForm.get('coverPhoto')?.setValue(formData.get('picture'));
+    this.coverPhoto = event.target.files[0];
+    // let formData = new FormData();
+    // formData.append('picture', coverPhoto);
+    // this.addEditBlogForm?.get('coverPhoto')?.setValue(coverPhoto);
   }
 
   // onGetTextEditorValue(event: any) {

@@ -1,8 +1,9 @@
 const multer = require('multer');
-console.log('called')
+// console.log('called')
 const storage = multer.diskStorage({
     destination: "./uploads",
     filename: (req, file, cb) => {
+        console.log('file name', file)
         return cb(null, file.originalname)
     }
 })

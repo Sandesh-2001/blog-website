@@ -69,7 +69,7 @@
             <div class="overflow-x-auto flex flex-wrap">
               <span
                 *ngFor="let tag of tags"
-                class="inline-flex justify-between mx-1 hover:bg-indigo-100 hover:cursor-pointer items-center rounded-md border my-1 py-2 border-gray-300 ps-2 pe-1 text-gray-800 sm:text-sm"
+                class="inline-flex justify-between mx-1 hover:bg-indigo-100 hover:cursor-pointer items-center rounded-md border my-1 py-2 border-gray-300                                  pe-1 text-gray-800 sm:text-sm"
               >
                 <span>{{ tag | checkEmpty }}</span>
                 <svg
@@ -94,7 +94,7 @@
               (keyup.backspace)="onRemoveTag(tags.length - 1, $event)"
               name="tags"
               id="tags"
-              class="block w-full min-w-16 ps-2 flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              class="block w-full min-w-16                                 flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               placeholder="Tag"
             />
           </div>

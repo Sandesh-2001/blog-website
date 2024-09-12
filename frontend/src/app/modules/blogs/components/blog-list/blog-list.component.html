@@ -45,10 +45,10 @@
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"> {{blog.timeToRead}} min </td>
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"> {{blog.shortDesc}}
                             </td>
-                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                            <td class="text-wrap max-w-14 break-words px-3 py-4 text-sm text-gray-500">
 
                                 <span *ngFor="let tag of blog.tags"
-                                    class="inline-flex   items-center rounded-md  px-2 mx-1   py-1 text-xs font-medium text-gray-600"
+                                    class="inline-flex   items-center  rounded-md m-1 p-2 text-xs font-medium text-gray-600"
                                     [ngClass]="tag.ngClasses">{{tag.data}}</span>
 
                             </td>

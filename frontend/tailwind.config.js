@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       input: {
-        
+
       }
     },
   },
-  plugins: [],
+
 };

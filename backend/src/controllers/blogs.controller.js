@@ -3,7 +3,7 @@ const indexModel = require("../models/index.model");
 
 const createBlog = asyncErrorHandler(async (req, res, next) => {
   console.log('req.body======>>>', req.body)
-
+  // req.body = JSON.parse(JSON.stringify(req.body));
   const blogData = await indexModel.blogModel.create({ ...req.body });
   res.status(200).json({ status: "success", result: blogData });
 });
@@ -24,7 +24,7 @@ const editBlog = asyncErrorHandler(async (req, res, next) => {
 })
 
 const getBlogs = asyncErrorHandler(async (req, res, next) => {
-  const blogsData = await indexModel.blogModel.find();
+  const blogsData = await indexModel.blogModel.aggregate([{ $sort: { createdAt: -1 } }])
   res.status(200).json({ status: "success", result: blogsData })
 })
 

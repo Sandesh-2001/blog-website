@@ -3,8 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    input, textarea {
-        @apply ps-2;
-    }
+@layer components {
+  input,
+  textarea {
+    @apply ps-2 !important;
+  }
 }
+
+/* input{
+    padding-left: 20px !important;
+} */
