@@ -8,7 +8,8 @@ import { AddBlogComponent } from './components/add-blog/add-blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextEditorComponent } from './components/text-editor/text-editor.component';
-import { SharedModule } from "../../shared/shared.module";
+import { SharedModule } from '../../shared/shared.module';
+import { TimeTillNowPipe } from 'src/app/core/pipes/time-till-now.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,14 @@ import { SharedModule } from "../../shared/shared.module";
     AddBlogComponent,
     BlogDetailComponent,
     TextEditorComponent,
+    TimeTillNowPipe,
   ],
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, BlogsRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    BlogsRoutingModule,
+    SharedModule,
+  ],
 })
 export class BlogsModule {}

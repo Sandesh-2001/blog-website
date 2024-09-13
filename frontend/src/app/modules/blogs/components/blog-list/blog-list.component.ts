@@ -25,7 +25,7 @@ export class BlogListComponent implements OnInit, AfterViewInit {
 
   chooseTagColor(): string {
     let index = Math.floor(Math.random() * this.tagColors.length);
-    console.log('index', index);
+    // console.log('index', index);
     return this.tagColors[index];
   }
 
@@ -42,7 +42,7 @@ export class BlogListComponent implements OnInit, AfterViewInit {
               ...data,
               tags: data.tags.map((tag: any) => {
                 let color = this.chooseTagColor();
-                console.log('color', color);
+                // console.log('color', color);
                 return {
                   data: tag,
                   ngClasses: `ring-${color}-500/10 hover:font-bold bg-${color}-200  t ext-${color}-500 ring-inset ring-1`,
@@ -54,7 +54,7 @@ export class BlogListComponent implements OnInit, AfterViewInit {
       )
       .subscribe({
         next: (data: any) => {
-          console.log('data from pipe===>>>', data);
+          // console.log('data from pipe===>>>', data);
           this.blogData = data;
           this._toastrService.success(
             'Success',
