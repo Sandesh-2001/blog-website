@@ -25,6 +25,8 @@
                             </th>
                             <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Time to
                                 read</th>
+                            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Created
+                                Before</th>
                             <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Short
                                 Description</th>
                             <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
@@ -43,6 +45,9 @@
                                 {{blog.title}}</td>
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{blog?.author}}</td>
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"> {{blog.timeToRead}} min </td>
+                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"> {{blog.createdAt |
+                                timetillnow }}
+                                min </td>
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"> {{blog.shortDesc}}
                             </td>
                             <td class="text-wrap max-w-14 break-words px-3 py-4 text-sm text-gray-500">
