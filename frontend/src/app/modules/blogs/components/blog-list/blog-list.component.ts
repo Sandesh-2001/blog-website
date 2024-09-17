@@ -66,4 +66,17 @@ export class BlogListComponent implements OnInit, AfterViewInit {
         },
       });
   }
+
+  onDeleteBlog(id: string) {
+    this._blogService.deleteBlog(id).subscribe({
+      next: (data) => {
+        console.log('deleted successfylly');
+        this._toastrService.success('Blog deleted successfully', 'Success');
+        this.fetchBlogs();
+      },
+      error: (err) => {
+        this._toastrService.error(err.message, 'Error');
+      },
+    });
+  }
 }

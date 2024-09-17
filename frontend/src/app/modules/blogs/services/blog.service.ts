@@ -21,6 +21,14 @@ export class BlogService {
     return this._httpClient.post(`${this.API_URL}/blogs`, data);
   }
 
+  editBlog(id: string, data: any) {
+    return this._httpClient.patch(`${this.API_URL}/blogs/${id}`, data);
+  }
+
+  deleteBlog(id: string) {
+    return this._httpClient.delete(`${this.API_URL}/blogs/${id}`);
+  }
+
   fetchAllBlogs() {
     return this._httpClient.get(`${this.API_URL}/blogs`);
   }

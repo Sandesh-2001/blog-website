@@ -24,10 +24,15 @@ const getBlog = asyncErrorHandler(async (req, res, next) => {
 
 const editBlog = asyncErrorHandler(async (req, res, next) => {
   const data = req.body;
+  console.log('req body for edit', req.body)
   const { id } = req.params;
   const editedBlog = await indexModel.blogModel.findByIdAndUpdate(id, data, { new: true });
   res.status(200).json({ status: "success", result: editedBlog })
-})
+});
+
+const helperEdit = () => {
+  
+}
 
 const getBlogs = asyncErrorHandler(async (req, res, next) => {
   const blogsData = await indexModel.blogModel.aggregate([{ $sort: { createdAt: -1 } }])
