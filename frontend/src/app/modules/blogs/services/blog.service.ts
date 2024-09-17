@@ -24,4 +24,8 @@ export class BlogService {
   fetchAllBlogs() {
     return this._httpClient.get(`${this.API_URL}/blogs`);
   }
+
+  getBlogData(id: string) {
+    return this._httpClient.get(`${this.API_URL}/blogs/${id}`);
+  }
 }

@@ -27,6 +27,10 @@ const routes: Routes = [
         path: 'blog-detail/:title',
         component: BlogDetailComponent,
       },
+      {
+        path: 'edit-blog/:id',
+        component: AddBlogComponent,
+      },
     ],
   },
   {

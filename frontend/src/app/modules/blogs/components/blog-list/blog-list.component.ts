@@ -57,8 +57,8 @@ export class BlogListComponent implements OnInit, AfterViewInit {
           // console.log('data from pipe===>>>', data);
           this.blogData = data;
           this._toastrService.success(
-            'Success',
-            'All blogs fetched successfully...'
+            'All blogs fetched successfully.',
+            'Success'
           );
         },
         error: (err) => {

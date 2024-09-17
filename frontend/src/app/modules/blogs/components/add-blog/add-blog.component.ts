@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { BlogService } from '../../services/blog.service';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-add-blog',
   templateUrl: './add-blog.component.html',
@@ -12,23 +12,51 @@ export class AddBlogComponent implements OnInit {
   addEditBlogForm!: FormGroup;
   tags: any[] = [];
   coverPhoto: any;
+  isEditBlog: boolean = false;
+  date: any;
   @ViewChild('tagsInput') tagsInput!: ElementRef;
   flag: boolean = false;
   constructor(
     private fb: FormBuilder,
     private _toastrService: ToastrService,
-    private _blogServie: BlogService
+    private _blogService: BlogService,
+    private _activatedRouter: ActivatedRoute
   ) {}
   ngOnInit(): void {
     this.addEditBlogForm = this.fb.group({
-      title: ['Demo text'],
-      author: new FormControl('Sandesh'),
-      shortDesc: ['Hello this is short desc'],
+      title: [''],
+      author: new FormControl(''),
+      shortDesc: [''],
       publishDate: [''],
       timeToRead: [23],
       coverPhoto: [''],
       trending: [true],
       tags: [['sdfsdf', 'fsdf', 'sdf', 'sdfds', 'fsd']],
+    });
+    this._activatedRouter.params.subscribe((data) => {
+      if (data && data['id']) {
+        this.getBlogData(data['id']);
+        this.isEditBlog = true;
+      }
+    });
+  }
+
+  getBlogData(id: string) {
+    this._blogService.getBlogData(id).subscribe((data: any) => {
+      console.log(
+        'blog data',
+        new Date(data.result['publishDate'])?.toISOString().split('T')[0]
+      );
+      this.tags = data.result['tags'];
+      this.addEditBlogForm.patchValue({
+        title: data.result['title'],
+        author: data.result['author'],
+        shortDesc: data.result['shortDesc'],
+        timeToRead: data.result['timeToRead'],
+        publishDate: new Date(data.result['publishDate'])
+          ?.toISOString()
+          .split('T')[0],
+      });
     });
   }
 
@@ -65,9 +93,8 @@ export class AddBlogComponent implements OnInit {
     console.log('Tags array after removing tag', this.tags);
   }
 
-  onAddEditFormSubmit() {
+  onAddFormSubmit() {
     let formData = new FormData();
-    console.log('add edit form ', this.addEditBlogForm.value);
     delete this.addEditBlogForm.value['coverPhoto'];
     delete this.addEditBlogForm.value['tags'];
     this.tags.forEach((tag) => {
@@ -75,20 +102,11 @@ export class AddBlogComponent implements OnInit {
     });
     formData.append('coverPhoto', this.coverPhoto);
     Object.entries(this.addEditBlogForm.value).forEach((entry: any) => {
-      console.log(
-        'entries of blog form==>>',
-        entry[0],
-        'entry 2===>>',
-        entry[1]
-      );
       let name = entry[0];
       let value = entry[1];
       formData.append(name, value);
     });
-
-    console.log('form data is', formData);
-
-    this._blogServie.addBlog(formData).subscribe({
+    this._blogService.addBlog(formData).subscribe({
       next: (data: any) => {
         this._toastrService.success('Blog added successfully...', 'Success');
       },
@@ -97,14 +115,10 @@ export class AddBlogComponent implements OnInit {
       },
     });
   }
+
+  onEditFormSubmit() {}
+
   onUploadCoverPhoto(event: any) {
     this.coverPhoto = event.target.files[0];
-    // let formData = new FormData();
-    // formData.append('picture', coverPhoto);
-    // this.addEditBlogForm?.get('coverPhoto')?.setValue(coverPhoto);
   }
-
-  // onGetTextEditorValue(event: any) {
-  //   this.addEditBlogForm.get('shortDesc')?.setValue(event);
-  // }
 }

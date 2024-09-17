@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { BlogsRoutingModule } from './blogs-routing.module';
 import { BlogsComponent } from './blogs.component';
@@ -27,5 +27,6 @@ import { TimeTillNowPipe } from 'src/app/core/pipes/time-till-now.pipe';
     BlogsRoutingModule,
     SharedModule,
   ],
+  providers: [DatePipe],
 })
 export class BlogsModule {}

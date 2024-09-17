@@ -16,6 +16,12 @@ const deleteBlog = asyncErrorHandler(async (req, res, next) => {
   res.status(200).json({ status: "success", result: null })
 });
 
+const getBlog = asyncErrorHandler(async (req, res, next) => {
+  const { id } = req.params;
+  const blogData = await indexModel.blogModel.findById(id);
+  res.status(200).json({ status: 'success', result: blogData })
+})
+
 const editBlog = asyncErrorHandler(async (req, res, next) => {
   const data = req.body;
   const { id } = req.params;
@@ -28,5 +34,5 @@ const getBlogs = asyncErrorHandler(async (req, res, next) => {
   res.status(200).json({ status: "success", result: blogsData })
 })
 
-module.exports = { createBlog, deleteBlog, editBlog, getBlogs };
+module.exports = { createBlog, deleteBlog, editBlog, getBlogs, getBlog };
 
